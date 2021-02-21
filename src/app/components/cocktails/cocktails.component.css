@@ -2,4 +2,5 @@ mat-card {
   margin: 5px;
   border: 1px solid #333;
   background-color: white;
+  color: black;
 }
