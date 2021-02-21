@@ -3,7 +3,6 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './components/home/home.component';
 import {CocktailsComponent} from './components/cocktails/cocktails.component';
 import {IngredientsComponent} from './components/ingredients/ingredients.component';
 import {ModesComponent} from './components/modes/modes.component';
@@ -13,7 +12,6 @@ import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     CocktailsComponent,
     IngredientsComponent,
     ModesComponent
