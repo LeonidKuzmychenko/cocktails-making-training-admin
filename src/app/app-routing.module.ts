@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {HomeComponent} from './home/home.component';
-import {CocktailsComponent} from './cocktails/cocktails.component';
-import {IngredientsComponent} from './ingredients/ingredients.component';
-import {ModesComponent} from './modes/modes.component';
+import {HomeComponent} from './components/home/home.component';
+import {CocktailsComponent} from './components/cocktails/cocktails.component';
+import {IngredientsComponent} from './components/ingredients/ingredients.component';
+import {ModesComponent} from './components/modes/modes.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},

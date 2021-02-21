@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CocktailsComponent implements OnInit {
 
+  items = ['q', 'w', 'e', 'r', 't', 'y'];
+
   constructor() { }
 
   ngOnInit(): void {

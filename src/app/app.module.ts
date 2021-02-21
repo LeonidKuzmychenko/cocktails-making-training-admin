@@ -3,18 +3,12 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HomeComponent} from './home/home.component';
-import {CocktailsComponent} from './cocktails/cocktails.component';
-import {IngredientsComponent} from './ingredients/ingredients.component';
-import {ModesComponent} from './modes/modes.component';
-
-
-// const routes: Routes = [
-//   {path: '', component: HomeComponent},
-//   {path: '/cocktails', component: CocktailsComponent},
-//   {path: '/ingredients', component: IngredientsComponent},
-//   {path: '/modes', component: ModesComponent}
-// ];
+import {HomeComponent} from './components/home/home.component';
+import {CocktailsComponent} from './components/cocktails/cocktails.component';
+import {IngredientsComponent} from './components/ingredients/ingredients.component';
+import {ModesComponent} from './components/modes/modes.component';
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,8 +20,9 @@ import {ModesComponent} from './modes/modes.component';
   ],
   imports: [
     BrowserModule,
-    // RouterModule.forRoot(routes),
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

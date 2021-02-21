@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModesComponent implements OnInit {
 
+  items = ['ddd', 'qqq', 'qwerty', '12345'];
+
   constructor() { }
 
   ngOnInit(): void {
