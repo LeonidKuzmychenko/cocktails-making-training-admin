@@ -1,4 +1,4 @@
-<mat-card *ngFor="let item of items">
+<mat-card *ngFor="let item of items" (click)="openDialog()">
   <mat-card-content *ngFor="let name of item.gameModeNames">
     <p>Name({{name.locale}}) - {{name.name}}</p>
   </mat-card-content>

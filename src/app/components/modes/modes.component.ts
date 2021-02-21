@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GameModeDto} from './dto/game-mode-dto';
+import {MatDialog} from '@angular/material/dialog';
+import {GameModeDialogComponent} from '../game-mode-dialog/game-mode-dialog.component';
 
 @Component({
   selector: 'app-modes',
@@ -11,7 +13,7 @@ export class ModesComponent implements OnInit {
 
   items: GameModeDto[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private dialog: MatDialog) {
     this.http.get<GameModeDto[]>('https://cocktails-making-training.herokuapp.com/modes')
       .subscribe((response) => {
         response.map((it) => {
@@ -20,6 +22,14 @@ export class ModesComponent implements OnInit {
         this.items = response;
         console.log(response);
       });
+  }
+
+  openDialog(): void {
+    console.log('click');
+    const dialogRef = this.dialog.open(GameModeDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 
   sortByName(name1: string, name2: string): number {
