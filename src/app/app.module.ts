@@ -8,7 +8,7 @@ import {IngredientsComponent} from './components/ingredients/ingredients.compone
 import {ModesComponent} from './components/modes/modes.component';
 import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from '@angular/common/http';
-import { GameModeDialogComponent } from './components/game-mode-dialog/game-mode-dialog.component';
+import { GameModeDialogComponent } from './components/modes/game-mode-dialog/game-mode-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 

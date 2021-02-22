@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {GameModeDto} from './dto/game-mode-dto';
 import {MatDialog} from '@angular/material/dialog';
-import {GameModeDialogComponent} from '../game-mode-dialog/game-mode-dialog.component';
+import {GameModeDialogComponent} from './game-mode-dialog/game-mode-dialog.component';
 
 @Component({
   selector: 'app-modes',
