@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {CocktailDto} from './dto/cocktail-dto';
 
 @Component({
   selector: 'app-cocktails',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CocktailsComponent implements OnInit {
 
-  items = ['q', 'w', 'e', 'r', 't', 'y'];
+  items: CocktailDto[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.http.get<CocktailDto[]>('assets/cocktails.json').subscribe(data => {
+      console.log(typeof data);
+      console.log(data);
+      this.items = data;
+    });
+  }
 
   ngOnInit(): void {
   }

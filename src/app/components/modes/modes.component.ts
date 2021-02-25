@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {GameModeDto} from './dto/game-mode-dto';
 import {MatDialog} from '@angular/material/dialog';
 import {GameModeDialogComponent} from './game-mode-dialog/game-mode-dialog.component';
+import {Mode} from './dto/mode';
 
 @Component({
   selector: 'app-modes',
@@ -11,17 +12,23 @@ import {GameModeDialogComponent} from './game-mode-dialog/game-mode-dialog.compo
 })
 export class ModesComponent implements OnInit {
 
-  items: GameModeDto[] = [];
+  items: Mode[] = [];
 
   constructor(private http: HttpClient, private dialog: MatDialog) {
-    this.http.get<GameModeDto[]>('https://cocktails-making-training.herokuapp.com/modes')
-      .subscribe((response) => {
-        response.map((it) => {
-          it.gameModeNames.sort((name1, name2) => this.sortByName(name1.locale, name2.locale));
-        });
-        this.items = response;
-        console.log(response);
-      });
+    // this.http.get<GameModeDto[]>('https://cocktails-making-training.herokuapp.com/modes')
+    //   .subscribe((response) => {
+    //     response.map((it) => {
+    //       it.gameModeNames.sort((name1, name2) => this.sortByName(name1.locale, name2.locale));
+    //     });
+    //     this.items = response;
+    //     console.log(response);
+    //   });
+
+    this.http.get<Mode[]>('assets/modes.json').subscribe(data => {
+      console.log(typeof data);
+      console.log(data);
+      this.items = data;
+    });
   }
 
   openDialog(): void {

@@ -1,6 +1,13 @@
-<mat-card *ngFor="let item of items" (click)="openDialog()">
-  <mat-card-content *ngFor="let name of item.gameModeNames">
-    <p>Name({{name.locale}}) - {{name.name}}</p>
+<!--<mat-card *ngFor="let item of items" (click)="openDialog()">-->
+<!--  <mat-card-content *ngFor="let name of item.gameModeNames">-->
+<!--    <p>Name({{name.locale}}) - {{name.name}}</p>-->
+<!--  </mat-card-content>-->
+<!--  <hr>-->
+<!--</mat-card>-->
+
+<mat-card *ngFor="let item of items">
+  <mat-card-content>
+    <p>Name(EN) {{item.nameEN}}</p>
+    <p>Name(RU) {{item.nameRU}}</p>
   </mat-card-content>
-  <hr>
 </mat-card>
